@@ -21,25 +21,30 @@ import {
 
 import {ResponsiveFlex} from "../components/pwa/ResponsiveFlex/ResponsiveFlex";
 import {Column} from "../components/general/Column/Column"
+import {DiceRoll} from "../components/pwa/DiceRoller/DiceRoller";
 import SplatteredComponents from "../components/general/SplatteredText/SplatteredComponents";
 import GlitchTextTransform from "../components/pwa/GlitchTextTransform/GlitchTextTransform";
+
+type Props = {
+    id?: string;
+}
 
 function Adv(columnHeight: number) {
 
     const elements = [
-        {id: 1, element: BlackBack({}), top: '0%', left: '0%', width: '29.23%', height: '32.3%'},
+        {id: 0, element: BlackBack({}), top: '0%', left: '0%', width: '29.23%', height: '32.3%'},
         {id: 1, element: BlackBack({className: 'dashed-inner-border', style: {boxShadow: '0 5px 15px rgba(0.3, 0.3, 0.3, 0.3)'}}), top: '0%', left: '51%', width: '49%', height: '43%'},
         {id: 2, element: <GlitchTextTransform className='black-background white-text-descending' style={{backgroundColor: 'transparent'}}>{Tile0({})}</GlitchTextTransform>, top: '1.5%', left: '2.4%',  width: '25%'},
         {id: 3, element: YellowBack({}), top: '27%', left: '20%', width: '29.23%', height: '35.22%'},
-        {id: 3, element: YellowBack({}), top: '67.5%', left: '0%', width: '100%', height: '32.5%'},
-        {id: 4, element: <GlitchTextTransform>{Tile1({})}</GlitchTextTransform>, top: '28%', left: '21%', width: '25%'},
-        {id: 4, element: Tile3({}), top: '33%', left: '1%', width: '20.5%'},
-        {id: 4, element: Tile4({}), top: '0.2%', left: '30.5%', width: '21.28%'},
-        {id: 4, element: Tile5({}), top: '2%', left: '53.5%', width: '45.4%'},
-        {id: 4, element: Tile6({}), top: '70%', left: '2.1%', width: '96%'},
-        {id: 4, element: Tile7({}), top: '64%', left: '53%', width: '46%'},
-        {id: 4, element: <img src={oracle_eyes} style={{width: '100%'}}/> , top: '60%', left: '22.7%', width: '25%'},
-        // ... more text elements
+        {id: 4, element: YellowBack({}), top: '67.5%', left: '0%', width: '100%', height: '32.5%'},
+        {id: 5, element: <GlitchTextTransform>{Tile1({})}</GlitchTextTransform>, top: '28%', left: '21%', width: '28%'},
+        {id: 6, element: Tile3({}), top: '33%', left: '1%', width: '20.5%'},
+        {id: 7, element: Tile4({}), top: '0.6%', left: '30.3%', width: '20%'},
+        {id: 8, element: Tile5({}), top: '2%', left: '53.5%', width: '45.4%'},
+        {id: 9, element: Tile6({}), top: '70%', left: '2.1%', width: '96%'},
+        {id: 10, element: Tile7({}), top: '64%', left: '53%', width: '46%'},
+        {id: 11, element: DiceRoll({ids: ['roll0-1', 'roll0-2', 'roll0-3', 'roll0-4'], style: {backgroundColor: "black", color: '#FCE64D'}}), top: '11.8%', left: '66.7%'},
+        {id: 12, element: <img src={oracle_eyes} style={{width: '100%'}}/> , top: '60%', left: '22.7%', width: '25%'},
     ];
 
     return (
@@ -47,7 +52,7 @@ function Adv(columnHeight: number) {
     )
 }
 
-const Introduction = () => {
+const Introduction:React.FC<Props> = ({id}) => {
     const [articleText, setArticleText] = useState<string>('');
     const columnRef = useRef<HTMLDivElement>(null);
     const [columnHeight, setColumnHeight] = useState(0);
@@ -63,7 +68,7 @@ const Introduction = () => {
     }, [articleText]); // <--- This useEffect will run when articleText changes
 
     return (
-        <Column style={{rowGap: '0.75rem', marginTop: '4rem'}}>
+        <Column id={id} style={{rowGap: '0.75rem', marginTop: '4rem'}}>
             <ResponsiveFlex style={{padding: '0rem 1rem'}}>
                 <Column ref={columnRef} style={{alignItems: 'center'}}>
                     {Title()}
@@ -93,7 +98,7 @@ interface ArticleProps {
 
 const Article = ({articleText}: ArticleProps) => (
     <Column style={{width: '35rem', marginTop: '1rem'}}>
-        <div className='body' style={{border: '0.2rem black solid', padding: '0.2rem', boxShadow: '0 5px 15px rgba(0, 0, 0, 0.3)'}}>
+        <div className='body' style={{border: '0.2rem black solid', padding: '0.2rem', paddingRight: '0.3rem', boxShadow: '0 5px 15px rgba(0, 0, 0, 0.3)'}}>
             <div style={{padding: '0.2rem'}}>
                 <div className='subtitle-futura'>Elevator pitch or “Why Should I Play It?”:</div>
                 <div className='body' style={{fontStyle: 'italic'}}>Game written by Fedor @luoencz Ryzhenkov:</div>

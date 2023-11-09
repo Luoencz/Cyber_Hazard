@@ -1,11 +1,9 @@
 import React, {CSSProperties} from 'react'
 import ScrambleTextTransform from "../../components/pwa/ScrambleTextTransform/ScrambleTextTransform";
-
 type Props = {
     style?: CSSProperties;
     className?: string;
 }
-
 
 export const Tile0: React.FC<Props> = ({style}) => {
     return (
@@ -26,8 +24,7 @@ export const Tile1: React.FC<Props> = ({style}) => {
         <p className='body-JBmono' style={{margin: '0', fontSize: '1.1rem', ...style}}>
             Think of yourself as a <strong>MODERATOR</strong>?
             <br/> <br/>
-            <strong>Build</strong> a tense drama, be the rules <strong><i>lawyer</i></strong>, get inventive, risky and
-            expressive.
+            <strong>Build</strong> a tense drama, curate the group, provide opportunities and opposition.
         </p>
     )
 };
@@ -59,13 +56,13 @@ export const Tile5: React.FC<Props> = ({style, className}) => {
     return (
         <p className={`body-JBmono black-background ${className}`}
            style={{color: '#FCE64D', margin: '0', fontSize: '1.0rem', ...style}}>
-            <p style={{margin: '0 0 0.3rem 0'}}> 1. You can <b>download</b> this app for the <b>offline</b> use if your
+            <p id={'roll0-1'} style={{margin: '0 0 0.3rem 0'}}> 1. You can <b>download</b> this app for the <b>offline</b> use if your
                 software supports <b>PWA</b>. </p>
-            <p style={{margin: '0 0 0.3rem 0'}}> 2. Press &nbsp;&nbsp;&nbsp;&nbsp; to <b>automatically</b> roll on
+            <p id={'roll0-2'} style={{margin: '0.4rem 0 0.3rem 0'}}> 2. <span style={{lineHeight: '2.4'}}> Press </span> &nbsp;&nbsp;&nbsp; to <b>automatically</b> roll on
                 the <b>RNG</b> table like this one. </p>
-            <p style={{margin: '0 0 0.3rem 0'}}> 3. <b>Click</b> scrambled text: <ScrambleTextTransform> to <b>hack</b> through the censorship
+            <p id={'roll0-3'} style={{margin: '0 0 0.3rem 0'}}> 3. <b>Click</b> scrambled text: <ScrambleTextTransform> to <b>hack</b> through the censorship
                 of the Oracle. </ScrambleTextTransform> </p>
-            <p style={{margin: '0 0 0.3rem 0'}}> 4. Follow the <u><b>link</b></u> to navigate to the connected
+            <p id={'roll0-4'} style={{margin: '0 0 0.3rem 0'}}> 4. Follow the <u><b>link</b></u> to navigate to the connected
                 component. </p>
         </p>
     )

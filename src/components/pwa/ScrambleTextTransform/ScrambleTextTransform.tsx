@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 
 // Define the characters that can be used for scrambling
 const LATIN_LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
 const NUMBERS = '0123456789';
 const SPECIAL_CHARACTERS = '!@#$%^&*()-_=+[]{};:,.<>/?~`';
+
+let scramble_speed = 500;
 
 // Generates a random character from the specified character set
 const generateRandomCharacter = (includeSpecial: boolean): string => {
@@ -25,7 +27,7 @@ const generateScrambledObject = (originalChar: string, isScrambling: boolean, sc
         originalChar,
         scrambleChar,
         scrambleEligible: eligible, // Store the eligibility
-        scrambleTime: Date.now() + Math.random() * 500 // Randomize the time for the scrambling effect
+        scrambleTime: Date.now() + Math.random() * scramble_speed // Randomize the time for the scrambling effect
     };
 };
 // Transforms a string into an array of scrambled objects
@@ -56,6 +58,13 @@ const scrambleChildren = (children: React.ReactNode, isScrambling: boolean) => {
 
 // The Scramble component that applies the scrambling effect to its children
 const Scramble: React.FC<{children: React.ReactNode}> = ({ children }) => {
+    const [hover, setHover] = useState(false);
+
+    const toggleHover = useCallback(() => {
+        setHover(!hover);
+        hover ? scramble_speed = 100000000 : scramble_speed = 500
+    }, [hover]);
+
     const [isScrambling, setIsScrambling] = useState(true);
     const [renderTrigger, setRenderTrigger] = useState(false);
 
@@ -80,7 +89,7 @@ const Scramble: React.FC<{children: React.ReactNode}> = ({ children }) => {
 
     const scrambledChildren = scrambleChildren(children, isScrambling);
 
-    return <div className={"clickable"} onClick={toggleScrambling}>{scrambledChildren}</div>;
+    return <div className={"clickable"} onClick={toggleScrambling} onMouseEnter={toggleHover} onMouseLeave={toggleHover}><span style={{color: '#C91F37', fontWeight: '800'}}>[</span> {scrambledChildren} <span style={{color: '#C91F37', fontWeight: '800'}}>]</span></div>;
 };
 
 export default Scramble;
