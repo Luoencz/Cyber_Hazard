@@ -1,0 +1,54 @@
+.title {
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1.5rem
+}
+
+.subtitle-futura {
+    font-family: "Futura", monospace;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1.5rem
+}
+
+.subtitle-cygnito {
+    font-family: "Cygnito Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.body {
+    font-family: "Futura", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.0rem
+}
+
+.body-JBmono {
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.0rem
+}
+
+.extrabold {
+    font-weight: 800;
+}
+
+.body-Menlo {
+    font-family: "Menlo", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.0rem
+}

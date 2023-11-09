@@ -1,0 +1,44 @@
+.dashed-border {
+  border: 3px solid rgba(0, 0, 0, 0);
+  background: 0 0 /24px 3px linear-gradient(90deg, white 25%, rgba(0, 0, 0, 0) 0 75%, white 0) border-box round no-repeat, 0 100% /24px 3px linear-gradient(90deg, white 25%, rgba(0, 0, 0, 0) 0 75%, white 0) border-box round no-repeat, 0 0 /3px 24px linear-gradient(white 25%, rgba(0, 0, 0, 0) 0 75%, white 0) border-box no-repeat round, 100% 0 /3px 24px linear-gradient(white 25%, rgba(0, 0, 0, 0) 0 75%, white 0) border-box no-repeat round;
+}
+
+.dashed-inner-border {
+  background: 0 4px /64px 4px linear-gradient(90deg, var(--cyborg-yellow) 25%, rgba(0, 0, 0, 0) 0 75%, var(--cyborg-yellow) 0) border-box round no-repeat, 0 calc(100% - 4px) /64px 4px linear-gradient(90deg, var(--cyborg-yellow) 25%, rgba(0, 0, 0, 0) 0 75%, var(--cyborg-yellow) 0) border-box round no-repeat, 4px 0 /4px 64px linear-gradient(var(--cyborg-yellow) 25%, rgba(0, 0, 0, 0) 0 75%, var(--cyborg-yellow) 0) border-box no-repeat round, calc(100% - 4px) 0 /4px 64px linear-gradient(var(--cyborg-yellow) 25%, rgba(0, 0, 0, 0) 0 75%, var(--cyborg-yellow) 0) border-box no-repeat round;
+}
+
+.black-background {
+  background-color: black;
+  color: white;
+}
+
+.yellow-background {
+  background: var(--cyborg-yellow);
+  color: black;
+}
+
+.black-background ::selection {
+  background-color: var(--cyborg-yellow);
+  color: black;
+}
+
+::selection {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.outlined {
+  -webkit-text-stroke: 0.05em black;
+}
+
+.centered {
+  align-items: center;
+}
+
+.reset-markdown > * {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/*# sourceMappingURL=app.css.map */

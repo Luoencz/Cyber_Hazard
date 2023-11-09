@@ -1,0 +1,60 @@
+.dashed-border {
+  $c: white;
+  $t: 3px; // border thickness
+
+  border: $t solid #0000;
+  $b1: / calc(8 * $t) $t linear-gradient(90deg, $c 25%, #0000 0 75%, $c 0) border-box round no-repeat;
+  $b2: / $t calc(8 * $t) linear-gradient($c 25%, #0000 0 75%, $c 0) border-box no-repeat round;
+
+  background: 0 0 $b1,
+  0 100% $b1,
+  0 0 $b2,
+  100% 0 $b2;
+}
+
+.dashed-inner-border {
+  $c: var(--cyborg-yellow);
+  $t: 4px; // border thickness
+
+  $b1: / calc(16 * $t) $t linear-gradient(90deg, $c 25%, #0000 0 75%, $c 0) border-box round no-repeat;
+  $b2: / $t calc(16 * $t) linear-gradient($c 25%, #0000 0 75%, $c 0) border-box no-repeat round;
+
+  background: 0 $t $b1,
+  0 calc(100% - $t) $b1,
+  $t 0 $b2,
+  calc(100% - $t) 0 $b2;
+}
+
+.black-background {
+  background-color: black;
+  color: white;
+}
+
+.yellow-background {
+  background: var(--cyborg-yellow);
+  color: black;
+}
+
+.black-background ::selection {
+  background-color: var(--cyborg-yellow);
+  color: black;
+}
+
+::selection {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.outlined {
+  -webkit-text-stroke: 0.05em black;
+}
+
+.centered {
+  align-items: center;
+}
+
+.reset-markdown > * {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}

@@ -1,0 +1,4 @@
+.overscroll-border {
+    overscroll-behavior: none;
+    background: black;
+}
