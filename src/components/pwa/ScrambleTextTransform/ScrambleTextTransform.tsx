@@ -80,7 +80,7 @@ const Scramble: React.FC<{children: React.ReactNode}> = ({ children }) => {
 
     const scrambledChildren = scrambleChildren(children, isScrambling);
 
-    return <div onClick={toggleScrambling}>{scrambledChildren}</div>;
+    return <div className={"clickable"} onClick={toggleScrambling}>{scrambledChildren}</div>;
 };
 
 export default Scramble;

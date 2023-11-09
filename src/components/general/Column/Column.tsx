@@ -5,10 +5,11 @@ type Props = {
     children?: React.ReactNode;
     className?: string;
     style?: CSSProperties;
+    id?: string;
 };
 
-export const Column = forwardRef<HTMLDivElement, Props> (({ children, className = '', style = {} }, ref) => (
-    <div ref={ref} className={`column ${className}`} style={{...style}}>
+export const Column = forwardRef<HTMLDivElement, Props> (({ children, className = '', style = {}, id }, ref) => (
+    <div ref={ref} id={id} className={`column ${className}`} style={{...style}}>
         {children}
     </div>
 ));

@@ -5,7 +5,6 @@ import {useEffect, useRef, useState} from 'react'
 import ReactMarkdown from 'react-markdown'
 
 import title_img from '../images/gametitle.png'
-import article_img from '../images/closehideexpandicons.png'
 import articleMd from '../text/section0/article.md'
 import oracle_eyes from '../images/oracle_eyes.png'
 
@@ -23,7 +22,6 @@ import {
 import {ResponsiveFlex} from "../components/pwa/ResponsiveFlex/ResponsiveFlex";
 import {Column} from "../components/general/Column/Column"
 import SplatteredComponents from "../components/general/SplatteredText/SplatteredComponents";
-import Markdown from "react-markdown";
 import GlitchTextTransform from "../components/pwa/GlitchTextTransform/GlitchTextTransform";
 
 function Adv(columnHeight: number) {

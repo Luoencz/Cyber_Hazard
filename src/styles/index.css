@@ -3,6 +3,7 @@
 @import "./fonts/font-faces.css";
 @import "./fonts/fonts.css";
 @import "markdown.css";
+@import "cursor.css";
 
 body {
     margin: 0;
