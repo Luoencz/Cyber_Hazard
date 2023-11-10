@@ -14,3 +14,16 @@ img {
     height: auto;
     width: auto;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
+@keyframes blinkAnimation {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.blink-effect > * {
+    animation: blinkAnimation 2s linear 2; /* Run for 2 seconds, 2 times */
+}

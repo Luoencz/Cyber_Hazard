@@ -2,6 +2,12 @@ body {
     cursor: url("../images/cursor.svg"), auto;
 }
 
+a {
+    color: #c91f37;
+    cursor: url("../images/cursor_click.svg"), auto
+}
+
 .clickable:hover {
     cursor: url("../images/cursor_click.svg"), auto !important;
 }
+

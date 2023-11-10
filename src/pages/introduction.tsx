@@ -33,7 +33,7 @@ function Adv(columnHeight: number) {
 
     const elements = [
         {id: 0, element: BlackBack({}), top: '0%', left: '0%', width: '29.23%', height: '32.3%'},
-        {id: 1, element: BlackBack({className: 'dashed-inner-border', style: {boxShadow: '0 5px 15px rgba(0.3, 0.3, 0.3, 0.3)'}}), top: '0%', left: '51%', width: '49%', height: '43%'},
+        {id: 1, element: BlackBack({className: 'dashed-inner-border', style: {boxShadow: '0 5px 15px rgba(0.3, 0.3, 0.3, 0.3)'}, id: "componentA"}), top: '0%', left: '51%', width: '49%', height: '43%'},
         {id: 2, element: <GlitchTextTransform className='black-background white-text-descending' style={{backgroundColor: 'transparent'}}>{Tile0({})}</GlitchTextTransform>, top: '1.5%', left: '2.4%',  width: '25%'},
         {id: 3, element: YellowBack({}), top: '27%', left: '20%', width: '29.23%', height: '35.22%'},
         {id: 4, element: YellowBack({}), top: '67.5%', left: '0%', width: '100%', height: '32.5%'},

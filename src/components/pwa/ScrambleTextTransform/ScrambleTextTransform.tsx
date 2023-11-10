@@ -89,7 +89,7 @@ const Scramble: React.FC<{children: React.ReactNode}> = ({ children }) => {
 
     const scrambledChildren = scrambleChildren(children, isScrambling);
 
-    return <div className={"clickable"} onClick={toggleScrambling} onMouseEnter={toggleHover} onMouseLeave={toggleHover}><span style={{color: '#C91F37', fontWeight: '800'}}>[</span> {scrambledChildren} <span style={{color: '#C91F37', fontWeight: '800'}}>]</span></div>;
+    return <span className={"clickable"} onClick={toggleScrambling} onMouseEnter={toggleHover} onMouseLeave={toggleHover}><span style={{color: '#C91F37', fontWeight: '800'}}>[</span> {scrambledChildren} <span style={{color: '#C91F37', fontWeight: '800'}}>]</span></span>;
 };
 
 export default Scramble;

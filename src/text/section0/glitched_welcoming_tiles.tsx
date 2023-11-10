@@ -1,8 +1,10 @@
 import React, {CSSProperties} from 'react'
 import ScrambleTextTransform from "../../components/pwa/ScrambleTextTransform/ScrambleTextTransform";
+import ScrollLink from "../../components/general/OPA_Linking/ScrollLink";
 type Props = {
     style?: CSSProperties;
     className?: string;
+    id?: string
 }
 
 export const Tile0: React.FC<Props> = ({style}) => {
@@ -54,7 +56,7 @@ export const Tile4: React.FC<Props> = ({style}) => {
 
 export const Tile5: React.FC<Props> = ({style, className}) => {
     return (
-        <p className={`body-JBmono black-background ${className}`}
+        <div className={`body-JBmono black-background ${className}`}
            style={{color: '#FCE64D', margin: '0', fontSize: '1.0rem', ...style}}>
             <p id={'roll0-1'} style={{margin: '0 0 0.3rem 0'}}> 1. You can <b>download</b> this app for the <b>offline</b> use if your
                 software supports <b>PWA</b>. </p>
@@ -62,22 +64,22 @@ export const Tile5: React.FC<Props> = ({style, className}) => {
                 the <b>RNG</b> table like this one. </p>
             <p id={'roll0-3'} style={{margin: '0 0 0.3rem 0'}}> 3. <b>Click</b> scrambled text: <ScrambleTextTransform> to <b>hack</b> through the censorship
                 of the Oracle. </ScrambleTextTransform> </p>
-            <p id={'roll0-4'} style={{margin: '0 0 0.3rem 0'}}> 4. Follow the <u><b>link</b></u> to navigate to the connected
+            <p id={'roll0-4'} style={{margin: '0 0 0.3rem 0'}}> 4. Follow the <ScrollLink toId={"componentA"}><u><b>link</b></u></ScrollLink> to navigate to the connected
                 component. </p>
-        </p>
+        </div>
     )
 };
 
 export const Tile6: React.FC<Props> = ({style, className}) => {
     return (
-        <p className={`body ${className}`} style={{margin: '0', fontSize: '0.85 rem', ...style}}>
+        <div className={`body ${className}`} style={{margin: '0', fontSize: '0.85 rem', ...style}}>
             <p style={{margin: '0 0 0.3rem 0'}}><b>TTRPGS</b>: Blades in the Dark and other FitD games, Mothership, CY_BORG, Sprawl, Eclipse Phase, Shadowrun, CBR_PNK, Stars Without Numbers, PbtA.</p>
             <p style={{margin: '0 0 0.3rem 0'}}><b>Media</b>: Ghost in the Shell, Akira, Cowboy Bebop, Do Androids Dream of Electric Sheep?, System Shock,
             The Sprawl Trilogy, Blade Runner, Deus Ex, Psycho Pass, Alternate Carbon, Cyberpunk 2077, Ghostrunner, Ergo
             Proxy, Katana Zero.</p>
             <p style={{margin: '0 0 0.3rem 0'}}><b>Music</b>: Pertubator (New Model, Dangerous Days), Extra Terra, Pixel Grip (Arena), Dan Terminus (The Wrath
             of Code), Dreddd (Pain Deluxe), Terrordyne (High Tech, Low Living), Carpenter Brut (TRILOGY).</p>
-        </p>
+        </div>
     )
 };
 
@@ -90,9 +92,9 @@ export const Tile7: React.FC<Props> = ({style, className}) => {
 };
 
 
-export const BlackBack: React.FC<Props> = ({style, className}) => {
+export const BlackBack: React.FC<Props> = ({style, className, id}) => {
     return (
-        <div className={`black-background ${className}`} style={{width: '100%', height: '100%', ...style}}/>
+        <div id={id} className={`black-background ${className}`} style={{width: '100%', height: '100%', ...style}}/>
     )
 }
 
